@@ -3,10 +3,12 @@ CC=gcc
 CFLAGS=-g -Wall
 BIN=function_pointer
 
+objects := $(wildcard *.o)
+
 all: $(BIN)
 
-$(BIN): function_pointer.o func_utils.o
-	$(CC) $(CFLAGS) function_pointer.o func_utils.o -o $@
+$(BIN): $(objects)
+	$(CC) $(CFLAGS) $(objects) -o $@
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $^

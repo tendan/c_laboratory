@@ -3,10 +3,12 @@ CC=gcc
 CFLAGS=-g -Wall
 BIN=linked_list
 
+objects := $(wildcard *.o)
+
 all: $(BIN)
 
-$(BIN): linked_list.o list_utils.o
-	$(CC) $(CFLAGS) linked_list.o list_utils.o -o $@
+$(BIN): $(objects)
+	$(CC) $(CFLAGS) $(objects) -o $@
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $^
