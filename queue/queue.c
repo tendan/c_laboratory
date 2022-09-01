@@ -43,9 +43,12 @@ int dequeue(queue *q)
     if (q->head == NULL) return QUEUE_EMPTY;
     node_t *tmp = q->head;
     int result = tmp->value;
+    
     q->head = q->head->next;
+
     if (q->head == NULL)
         q->tail = NULL;
+    
     free(tmp);
 
     return result;
@@ -61,9 +64,9 @@ int main()
     enqueue(&q1, 7);
     enqueue(&q1, 13);
 
-    int i;
-    while ((i = dequeue(&q1)) != QUEUE_EMPTY)
-        printf("%d\n", i);
+    int res;
+    while ((res = dequeue(&q1)) != QUEUE_EMPTY)
+        printf("%d\n", res);
 
     return 0;
 }
