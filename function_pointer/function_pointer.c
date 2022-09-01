@@ -3,14 +3,12 @@
 #include <string.h>
 #include "func_utils.h"
 
-int even(int num)
+bool even(int num)
 {
     return num % 2 == 0;
 }
 
-
-
-int divisible_by_3(int num)
+bool divisible_by_3(int num)
 {
     return num % 3 == 0;
 }
