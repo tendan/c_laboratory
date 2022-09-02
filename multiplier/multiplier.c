@@ -22,11 +22,28 @@ void print_arr(int *numbers, size_t length)
 
 int main()
 {
+    // Length declared using constant macro
     int numbers[ARR_LENGTH] = {3, 5, 6, 9, 12};
-    puts("Before multiply:");
+
+    puts("numbers[] before multiply:");
     print_arr(numbers, ARR_LENGTH);
+    
     multiply_by(numbers, 3, ARR_LENGTH);
-    puts("After multiply:");
+    
+    puts("numbers[] after multiply:");
     print_arr(numbers, ARR_LENGTH);
+
+    // Length applied by compiler
+    int numbers2[] = {3, 5, 6, 9, 12};
+    int size = sizeof(numbers2) / sizeof(numbers2[0]);
+
+    puts("numbers2[] before multiply:");
+    print_arr(numbers2, size);
+
+    multiply_by(numbers2, 3, size);
+
+    puts("numbers2[] after multiply:");
+    print_arr(numbers2, size);
+
     return 0;
 }
