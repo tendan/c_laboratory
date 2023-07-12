@@ -1,2 +1,2 @@
 # c_laboratory
-My C experimentals
+My C experiments
